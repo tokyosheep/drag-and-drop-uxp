@@ -27,10 +27,27 @@ const preventDragEvent = () =>{
 		console.log("droped");
 		console.log(e);
         e.preventDefault();
+		console.log(e.dataTransfer.getData("text"));
+		if (e.dataTransfer.getData("text") === "red box") {
+			window.uxpHost.postMessage(JSON.stringify({
+				type: "dropped",
+				msg: "red box"
+			}));
+			return;
+		}
 		const files = Array.from(e.dataTransfer.files);
 		const pathList = files.map(v =>  v.path);
 		console.log(files);
 		console.log(pathList);
+		// **Note** client side cannot file path directory
+		Array.from(files).forEach((file) => {
+    		const reader = new FileReader();
+    		reader.addEventListener("load", function (event) {
+			  // receiving data itself
+    		  console.log(event);
+    		});
+    		reader.readAsDataURL(file);
+  		});
 	}
 };
 

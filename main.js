@@ -77,3 +77,8 @@ registerDragEvent = () => {
 
 registerDragEvent();
 
+window.addEventListener("message", async e => {
+  const data = JSON.parse(e.data);
+  console.log(data);
+  alert(data.msg);
+});
