@@ -1,0 +1,43 @@
+body {
+    color: white;
+    padding: 0 16px;
+  }
+  li:before {
+    content: '• ';
+    width: 3em;
+  }
+
+  #layers {
+    border: 1px solid #808080;
+    border-radius: 4px;
+    padding: 16px;
+  }
+
+  .dropzone {
+  width: 400px;
+  height: 100px;
+  color: #808080;
+  font-size: 20px;
+}
+
+.container {
+  width: 100%;
+  padding: 10px;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+}
+
+.red {
+  background-color: red;
+}
+
+.lightblue {
+  background: #9cfcff;
+}
+
+.orange {
+  background: #ff9803;
+}
